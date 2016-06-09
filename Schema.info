@@ -1,0 +1,38 @@
+
+
+
+// Indicates that the language supports the unix shebang #! at the beginning of the source code
+// in order to run the code by an interpreter
+UnixShebang {
+    StandardInterpreter string
+}
+
+Tokenizer {
+    // Indicates the types of encodings that the languages supports and the all compilers should accept
+    SupportedEncondings [Identifier]
+    SupportsBom bool
+    SyntaxSensitive bool /* true if the tokenizer will return different
+                              tokens based on where the lexer is at in the
+                              syntax tree */
+    SpecialTokens [
+        Identifier Literal
+    ]
+    KeywordSet {
+        // Probably want a way to specify the priority of the keywords
+        // in terms of the tokenizer/lexer
+        
+    }
+    Comments {
+        SingleLine [String]
+        MultiLine [
+            Start End (Nested)
+        ]
+    }
+}
+
+
+// Talk about objects and properties
+// Are member variables dynamic like javascript (every access requires a lookup to determine the memory location)
+// Or are they fixed at compile time? (C++/D/C#/Java...)
+Objects {
+}

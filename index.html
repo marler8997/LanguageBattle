@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title>Language Battle</title>
+  <script type="text/javascript"><!--
+
+// TODO: Rust concept of module preludes
+// TODO: String encoding (utf8?)
+// TODO: Declaration styles "int x = 0" vs "x: int = 0"
+  
+  
+var languages = [
+  {
+    name:"C"
+  },
+  {
+    name:"C++"
+  },
+  {
+    name:"D"
+  },
+  {
+    name:"Rust"
+  },
+  {
+    name:"JavaScript"
+  }
+];
+/*
+var languageGroupArray = [
+  {
+    names:["C","C++"],
+    packageManagement
+  }
+];
+*/
+
+var languageMap = {};
+for(var i = 0; i < languages.length; i++) {
+  var language = languages[i];
+  languageMap[language.name] = language;
+}
+/*
+var languageGroups = {};
+for(var i = 0; i < languageGroupArray.length; i++) {
+  var languageGroup = languageGroupArray[i];
+  languageGroups[languageGroup.name] = language;
+}
+*/
+
+function bodyOnload()
+{
+    var html = '';
+    
+    for(var i = 0; i < languages.length; i++) {
+        var language = languages[i];
+        html += '<div>' + language.name + '</div>';
+    }
+    
+    
+    //
+    // UFCS
+    //
+    html += '<h2>UFCS</h2>';
+    
+    //
+    // Generate Package Management
+    //
+    html += '<h2>Package Management</h2>';
+    /*
+    for(var i = 0; i < languages.length; i++) {
+        html += '<
+    }
+    */
+    
+    document.getElementById('ContentDiv').innerHTML = html;
+}
+  --></script>
+</head>
+<body onload="bodyOnload()">
+  <h1>Language Battle</h1>
+  <div id="ContentDiv"></div>
+</body>
+</html>
